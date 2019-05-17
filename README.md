@@ -1,10 +1,11 @@
-# Título del trabajo
+# Luces LED en función de la duración de una nota
 
-Descripción breve del proyecto a realizar (2-3 frases).
+En el presente trabajo se ha desarrollado un código que, a partir de una melodía y dependiendo de la duración de las notas, hace que se encienda un color determinado de LED.
 
 ## Integrantes del equipo
 
-Nombres, apellidos, y usuario GitHub de los integrantes del equipo.
+Natalia Borlaf Nieto, nborlaf
+Daniel de la Cruz Redondo, 
 
 ## Objetivos del trabajo
 
