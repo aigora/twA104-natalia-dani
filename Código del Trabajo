@@ -1,0 +1,79 @@
+#include"pitches.h"
+#define BLUE 9
+#define GREEN 10
+#define RED 11
+#define ZUM A0
+
+
+long    DO=261.626,
+        DoS=277.183,
+        RE=293.665,
+        RES=311.127,
+        MI=329.628,
+        FA=349.228,
+        FAS=369.994,
+        SOL=391.995,
+        SOLS=415.305,
+        LA=440,
+        LAS=466.164,
+        SI=493.883,
+        DO2=523.251,
+        DOS2=554.365,
+        RE2=587.330,
+        RES2=622.254,
+        MI2=659.255,
+        FA2=698.456,
+        SOL2=783.991,
+        LA2=880,
+        PAU=30000; //pausa
+
+int dim;
+int i;
+
+int melodia[]={MI, LA, SI, DO2, DO2, RE2, MI2, FA2, SI, DO2, RE2, LA2, SOL2, FA2, MI2, RES2, MI2, LA, SI, DO2, DO2, RE2, MI2, FA2, SI, DO2, RE2, LA2, SOL2, SI, DO2};
+int b=2000, n=1000, c=500, s=250, f=125;
+int duracionNota[] = {n, c, c, n, n, c, c, b, c, c, c, c, c, c, c, c, b, c, c, n, n, c, c, b, c, c, c, c, c, c, n};
+
+
+void setup() {
+  dim=(sizeof(melodia) / sizeof(melodia[0]));
+  
+pinMode(ZUM, OUTPUT);  
+pinMode(RED, OUTPUT);
+pinMode(GREEN, OUTPUT);
+pinMode(BLUE, OUTPUT);
+
+
+}
+
+
+void loop() {
+  
+int color[dim];
+for(i=0; i<dim; i++){
+  if(duracionNota[i]==n){
+     color[i]= GREEN;
+    }
+  if(duracionNota[i]==c){
+     color[i]= RED;
+    }
+  if(duracionNota[i]==b){
+     color[i]= BLUE;
+    }
+   if(duracionNota[i]==s){
+     color[i]= BLUE;
+    }
+   if(duracionNota[i]==f){
+     color[i]= BLUE;
+    }
+}
+  
+  for(int notaActual=0; notaActual<dim; notaActual++){ 
+    digitalWrite(color[notaActual], HIGH);
+    tone(ZUM, melodia[notaActual]);
+    delay(duracionNota[notaActual]);
+    digitalWrite(color[notaActual], LOW);
+    noTone(ZUM);
+  }
+
+}
