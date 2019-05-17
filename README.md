@@ -5,7 +5,7 @@ En el presente trabajo se ha desarrollado un c√≥digo que, a partir de una melod√
 ## Integrantes del equipo
 
 Natalia Borlaf Nieto, nborlaf
-Daniel de la Cruz Redondo, 
+Daniel de la Cruz Redondo, danieldelacruzredondo
 
 ## Objetivos del trabajo
 
